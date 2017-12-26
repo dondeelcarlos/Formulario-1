@@ -1,8 +1,9 @@
 Formulario Basico en HTML5
 
-index.html
+index.html --> Codigo del Formulario 
 
-Codigo PHP
+PHP
+
 class.php Conxion --> base de datos "Formulario"
 validaciones.php --> Funciones del formulario.
 

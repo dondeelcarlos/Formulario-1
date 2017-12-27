@@ -1,25 +1,15 @@
 <?php
-
-global $nombre, $apellidos,$direccion,$telefono;
-$nombre = $_POST['txt_nombre']; 
-$apellidos = $_POST ['txt_apellidos'];
-$direccion = $_POST ['txt_direccion']; 
-$telefono = $_POST ['txt_telefono']; 
-
     
 require_once ('class.php'); 
 
-    $conexion=conectarBD(); 
+ conectarBD ();//conexion a la BD
 
 
-        function Insertar ($name,$apelli,$direc,$phone)
-        {
-            $sql = "INSERT INTO datos VALUES (".$name.", '".$apelli."', '".$direc."', '".$phone."')";
+ 	$sql = "INSERT INTO datos VALUES ('$_POST[txtnombre]','$_POST[txtapellidos]','$_POST[txtdireccion]','$_POST[txttelefono]')"; //Insersion de datos 
+
+pg_query($sql); //Ejecucion del qwery
+
+
+	echo "datos insertados correctamente";
             
-             return pg_query($conexion,$sql);
-        }
-   
-insertar($nombre,$apellidos,$direccion,$telefono); 
-
-
 ?>
